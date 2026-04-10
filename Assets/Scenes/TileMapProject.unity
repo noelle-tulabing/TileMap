@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 455827936}
   - component: {fileID: 455827938}
   - component: {fileID: 455827937}
+  - component: {fileID: 455827939}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -152,7 +153,7 @@ Animator:
   m_GameObject: {fileID: 455827930}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bbf8af60220e9495ab496dbfcb0eef04, type: 2}
+  m_Controller: {fileID: 9100000, guid: e337238b66c1f42c8ac7de549bdc81b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -330,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamepadInput
   PlayerMovement: {fileID: 455827936}
+  PlayerCombat: {fileID: 455827939}
   Deadzone: 0.2
   GamepadIndex: 0
   UseDpad: 1
@@ -346,6 +348,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyboardInput
   PlayerMovement: {fileID: 455827936}
+  player: {fileID: 455827939}
+--- !u!114 &455827939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455827930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc63e1abaa4dd42c49af92ab28aae9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
+  Animator: {fileID: 455827931}
 --- !u!1 &514578860
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +454,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 3
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -578,7 +594,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

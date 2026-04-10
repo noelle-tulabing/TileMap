@@ -1,16 +1,31 @@
+using System;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Animator Animator;
+    private float cooldown = GameParameters.PlayerAttackCooldown;
+    private float timer;
+
+    public void Attack()
     {
-        
+        if (timer <= 0)
+        {
+            Animator.SetBool("IsAttacking", true);
+            timer = cooldown;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FinishAttacking()
     {
-        
+        Animator.SetBool("IsAttacking", false);
+    }
+
+    public void Update()
+    {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
     }
 }
