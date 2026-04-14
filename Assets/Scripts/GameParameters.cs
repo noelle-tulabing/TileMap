@@ -14,4 +14,6 @@ public static class GameParameters
     
     public static Key PlaceKey  = Key.E;
     public static Key PickupKey = Key.F;
+
+    public static int MaxHealth = 10;
 }
